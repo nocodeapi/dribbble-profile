@@ -1,0 +1,10 @@
+{
+    "build": {
+        "env": {
+            "DRIBBBLE_NOCODEAPI": "@dribbble-nocodeapi",
+        }
+    },
+    "env": {
+        "DRIBBBLE_NOCODEAPI": "@dribbble-nocodeapi",
+    }
+}

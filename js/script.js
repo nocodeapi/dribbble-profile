@@ -1,12 +1,12 @@
+var endpoint = `https://v1.nocodeapi.com/fajarsiddiq/dribbble/oFJJDHzwtaPFsCkF`
+var mode = 'light'
 var listElm = document.querySelector('.shots');
 var scrolling = true
 var page = 1
 var perPage = 9
 
 var loadMore = function() {
-    console.log(`https://v1.nocodeapi.com/fajarsiddiq/dribbble/oFJJDHzwtaPFsCkF/shots?page=${page}&per_page=${perPage}`)
-
-    fetch(`https://v1.nocodeapi.com/fajarsiddiq/dribbble/oFJJDHzwtaPFsCkF/shots?page=${page}&per_page=${perPage}`)
+    fetch(`${endpoint}/shots?page=${page}&per_page=${perPage}`)
         .then((res) => res.json())
         .then((data) => {
             const shots = data
@@ -41,7 +41,7 @@ var loadMore = function() {
                                 </div>
                                 <div class="meta-data">
                                     <h2 class="title">${item.title}</h2>
-                                    <div class="description">${item.description}</div>
+                                    <div class="description">${item.description !== null ? item.description : ''}</div>
                                     <div class="visit-dribbble"><a href="${item.html_url}" target="_blank">Visit on Dribbble</a></div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@ window.onscroll = function(ev) {
 
 loadMore();
 
-fetch('https://v1.nocodeapi.com/fajarsiddiq/dribbble/oFJJDHzwtaPFsCkF')
+fetch(endpoint)
     .then((res) => res.json())
     .then((data) => {
         const profile = data
@@ -98,6 +98,19 @@ fetch('https://v1.nocodeapi.com/fajarsiddiq/dribbble/oFJJDHzwtaPFsCkF')
         document.querySelector('.social-link').innerHTML = output
     })
 
+var getCurrentMode = function(){
+    var body = document.getElementById("body");
+    var currentClass = body.className;
+    const localMode = localStorage.getItem("mode");
+    if(localMode !== undefined){
+        currentClass = localMode
+    }else{
+        currentClass = mode
+    }
+}
+
+document.addEventListener("DOMContentLoaded", getCurrentMode);
+
 var openModal = function(event) {
     document.documentElement.style.overflow = 'hidden';
     document.body.scroll = "no";
@@ -117,5 +130,7 @@ var closeModal = function(event) {
 var toggleDarkLight = function() {
     var body = document.getElementById("body");
     var currentClass = body.className;
-    body.className = currentClass == "dark" ? "light" : "dark";
+    var setThisMode = currentClass == "dark" ? "light" : "dark";
+    body.className = setThisMode
+    localStorage.setItem("mode", setThisMode);
 }

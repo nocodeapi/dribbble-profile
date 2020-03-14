@@ -23,12 +23,17 @@ var loadMore = function() {
                 var list = document.createElement('li');
                 list.className = 'group';
 
+                if(key % 3 === 0){
+                        list.className = 'layout-grid';
+
+                }
+
                 list.innerHTML = `
                 <li id="screenshot-${item.id}" class="group">
                     <div class="dribbble">
                         <div class="dribbble-shot">
                             <div class="dribbble-img" id="${item.id}" name="${item.id}" onclick="openModal(this)">
-                                    <img alt="${item.title}" src="${item.images.normal}">
+                                    <img alt="${item.title}" src="${item.images.two_x === undefined ? item.images.one_x : item.images.two_x}">
                             </div>
                         </div>
                         <div class="overlay" name="${item.id}" onclick="closeModal(this)" id="overlay${item.id}">

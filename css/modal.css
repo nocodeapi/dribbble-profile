@@ -1,81 +1,81 @@
+/** Button */
+button {
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	position: relative;
+}
 
-  
-  /** Button */
-  button {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .btn {
-    font-size: 14px;
-    line-height: 1.4;
-    padding: 13px 20px;
-    border-radius: 4px;
-    transition: box-shadow 0.1s, top 0.1s;
-    box-shadow: 0 3px 0 rgba(0,0,0,0.3);
-    top: 0;
-    background: #fff;
-  }
-  .btn:hover {
-    box-shadow: 0 3px 0 transparent;
-    top: 3px;
-  }
-  .btn:active {
-    background: #f2f2f2;
-  }
-  
-  /** Modal */
-  .modal {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-    position: fixed;
-    top: 10px;
-    left: 0;
-    right: 0;
-    max-width: 840px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 4px;
-    z-index: 2;
-  }
-  .modal-close-btn {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 20px;
-  }
-  
-  /** Overlay */
-  .overlay {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(28, 28, 28, 0.98);
-    z-index: 1;
-  }
+.btn {
+	font-size: 14px;
+	line-height: 1.4;
+	padding: 13px 20px;
+	border-radius: 4px;
+	transition: box-shadow 0.1s, top 0.1s;
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+	top: 0;
+	background: #fff;
+}
+.btn:hover {
+	box-shadow: 0 3px 0 transparent;
+	top: 3px;
+}
+.btn:active {
+	background: #f2f2f2;
+}
 
-  .light .overlay{
-    background-color: rgba(247, 247, 247, 0.98) !important;
-  }
-  
-  /** JS */
-  .is-visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
+/** Modal */
+.modal {
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+	position: fixed;
+	top: 10px;
+	left: 0;
+	right: 0;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 30px;
+	border-radius: 4px;
+	z-index: 2;
+}
+.modal-close-btn {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+/** Overlay */
+.overlay {
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index: 1;
+}
+
+.light .overlay {
+	background-color: rgba(247, 247, 247, 0.98) !important;
+}
+
+/** JS */
+.is-visible {
+	opacity: 1;
+	pointer-events: auto;
+}

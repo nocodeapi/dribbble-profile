@@ -1,5 +1,4 @@
 var endpoint = `https://v1.nocodeapi.com/fajarsiddiq/dribbble/oFJJDHzwtaPFsCkF`
-var mode = 'light'
 var listElm = document.querySelector('.shots');
 var scrolling = true
 var page = 1
@@ -24,26 +23,26 @@ var loadMore = function() {
                 list.className = 'group';
 
                 list.innerHTML = `
-                <li id="screenshot-${key}" class="group">
+                <li id="screenshot-${item.id}" class="group">
                     <div class="dribbble">
                         <div class="dribbble-shot">
-                            <div class="dribbble-img" id="${key}" name="${key}" onclick="openModal(this)">
+                            <div class="dribbble-img" id="${item.id}" name="${item.id}" onclick="openModal(this)">
                                     <img alt="DMarket Landing page" src="${item.images.normal}">
                             </div>
                         </div>
-                        <div class="overlay" name="${key}" onclick="closeModal(this)" id="overlay${key}">
-                        <button class="modal-close-btn" name="${key}"  id="overlay${key}" onclick="closeModal(this)"><i class="fa fa-times" title="Close"></i></button></div>
+                        <div class="overlay" name="${item.id}" onclick="closeModal(this)" id="overlay${item.id}">
+                        <div class="modal-close-btn" name="${item.id}"  id="overlay${item.id}" onclick="closeModal(this)">X</div></div>
                         
-                        <div class="modal" id="modal${key}">
+                        <div class="modal" id="modal${item.id}">
                             <div class="detail-card">
                                 <div class="image">
-                                 <img alt="DMarket Landing page" src="${item.images.normal}">
+                                 <img alt="DMarket Landing page" src="${item.images.two_x}">
                                 </div>
                                 <div class="meta-data">
                                     <h2 class="title">${item.title}</h2>
                                     <div class="description">${item.description !== null ? item.description : ''}</div>
-                                    <div class="visit-dribbble"><a href="${item.html_url}" target="_blank">Visit on Dribbble</a></div>
                                 </div>
+                                <div class="visit-dribbble"><a href="${item.html_url}" target="_blank">Visit on Dribbble</a></div>
                             </div>
                         </div>
                     </div>
